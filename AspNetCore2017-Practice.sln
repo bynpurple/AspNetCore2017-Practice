@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1433
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice1", "Practice1\Practice1.csproj", "{37BCA0E3-C787-4EA4-A846-21201C84D764}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Practice1", "Practice1\Practice1.csproj", "{37BCA0E3-C787-4EA4-A846-21201C84D764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Services", "NetCore.Services\NetCore.Services.csproj", "{FF0F676C-49C1-48D2-B1AA-0EB8C248812C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Data", "NetCore.Data\NetCore.Data.csproj", "{3DC490A6-B931-4445-9EDE-04247B4BAEED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{37BCA0E3-C787-4EA4-A846-21201C84D764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37BCA0E3-C787-4EA4-A846-21201C84D764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37BCA0E3-C787-4EA4-A846-21201C84D764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF0F676C-49C1-48D2-B1AA-0EB8C248812C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF0F676C-49C1-48D2-B1AA-0EB8C248812C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF0F676C-49C1-48D2-B1AA-0EB8C248812C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF0F676C-49C1-48D2-B1AA-0EB8C248812C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC490A6-B931-4445-9EDE-04247B4BAEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC490A6-B931-4445-9EDE-04247B4BAEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC490A6-B931-4445-9EDE-04247B4BAEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC490A6-B931-4445-9EDE-04247B4BAEED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NetCore.Services.Interfaces;
+using NetCore.Services.Svcs;
 
 namespace Practice1
 {
@@ -32,7 +34,13 @@ namespace Practice1
             });
 
 
+            // MVC 패턴을 사용하기 위해 서비스로 등록
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // 의존성 주입을 사용하기 위해 서비스로 등록
+            // 껍데기             내용물
+            // IUser 인터페이스에 UserService 클래스 인스턴스 주입
+            services.AddScoped<IUser, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

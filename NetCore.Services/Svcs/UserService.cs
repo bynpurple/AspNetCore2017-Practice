@@ -19,17 +19,17 @@ namespace NetCore.Services.Svcs
             {
                 new User()
                 {
-                    userId = "user001",
-                    userName = "김유저",
-                    userEmail = "user001@gmail.com",
-                    password = "123456"                    
+                    UserId = "user001",
+                    UserName = "김유저",
+                    UserEmail = "user001@gmail.com",
+                    Password = "123456"                    
                 }
             };
         }
 
         private bool checkTheUserInfo(string userId, string password)
         {
-            return GetUserInfos().Where(user => user.userId.Equals(userId) && user.password.Equals(password)).Any();
+            return GetUserInfos().Where(user => user.UserId.Equals(userId) && user.Password.Equals(password)).Any();
         }
 
         #endregion

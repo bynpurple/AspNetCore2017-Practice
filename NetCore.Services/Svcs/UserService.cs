@@ -1,4 +1,5 @@
 ﻿//using NetCore.Data.DataModels;
+using Microsoft.EntityFrameworkCore;
 using NetCore.Data.Classes;
 using NetCore.Data.ViewModels;
 using NetCore.Services.Data;
@@ -37,9 +38,41 @@ namespace NetCore.Services.Svcs
             //};
         }
 
+        private User GetUserInfo(string userId, string password)
+        {
+            User user;
+
+            // lambda
+            //user = _context.Users.Where(u => u.UserId.Equals(userId) && u.Password.Equals(password)).FirstOrDefault();
+
+            // FromSql
+            // Table > where 절은 sql 구문 내에서 구현되는 것이 아닌 추가로 람다식을 통해 구현됨
+            //user = _context.Users.FromSql("SELECT UserId, UserName, UserEmail, Password, IsMemberShipWithDrawn, JoinedUtcDate FROM dbo.[User]")
+            //    .Where(u => u.UserId.Equals(userId) && u.Password.Equals(password))
+            //    .FirstOrDefault();
+
+            // View
+            // View 또한 where 절은 sql 구문 내에서 구현되는 것이 아닌 추가로 람다식을 통해 구현됨
+            //user = _context.Users.FromSql("SELECT UserId, UserName, UserEmail, Password, IsMemberShipWithDrawn, JoinedUtcDate FROM dbo.uvwUser")
+            //    .Where(u => u.UserId.Equals(userId) && u.Password.Equals(password))
+            //    .FirstOrDefault();
+
+            // Function
+            // function 내 매개변수를 넣을 수 있기 때문에 where 절 같은 경우 소스 내 람다식이 필요없음
+            //user = _context.Users.FromSql($"SELECT UserId, UserName, UserEmail, Password, IsMemberShipWithDrawn, JoinedUtcDate FROM dbo.ufnUser({userId}, {password})")
+            //    .FirstOrDefault();
+
+            // Stored Procedure
+            user = _context.Users.FromSql("dbo.uspCheckLoginByUserId @p0, @p1", new[] { userId, password })
+                .FirstOrDefault();
+
+            return user;
+        }
+
         private bool checkTheUserInfo(string userId, string password)
         {
-            return GetUserInfos().Where(user => user.UserId.Equals(userId) && user.Password.Equals(password)).Any();
+            //return GetUserInfos().Where(user => user.UserId.Equals(userId) && user.Password.Equals(password)).Any();
+            return GetUserInfo(userId, password) != null ? true : false;
         }
 
         #endregion

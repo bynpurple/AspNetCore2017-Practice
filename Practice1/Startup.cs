@@ -7,8 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NetCore.Services.Data;
 using NetCore.Services.Interfaces;
 using NetCore.Services.Svcs;
 
@@ -41,6 +43,18 @@ namespace Practice1
             // 껍데기             내용물
             // IUser 인터페이스에 UserService 클래스 인스턴스 주입
             services.AddScoped<IUser, UserService>();
+
+
+            //DB 접속정보, Migrations 프로젝트 지정
+            //services.AddDbContext<CodeFirstDbContext>(
+            //    options =>
+            //    options.UseSqlServer(connectionString: Configuration.GetConnectionString(name: "DefaultConnection"),
+            //    sqlServerOptionsAction: mig => mig.MigrationsAssembly(assemblyName : "NetCore.Migrations"))
+            //    );
+
+            services.AddDbContext<DBFirstDbContext>(options =>
+            options.UseSqlServer(connectionString:Configuration.GetConnectionString(name: "DBFirstDBConnection"))
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,25 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace NetCore.Data.DataModels
+namespace NetCore.Data.Classes
 {
-    // 사용자 권한 테이블
     public class UserRolesByUser
     {
-        [Key, StringLength(50), Column(TypeName = "varchar(50)")]
+        [Key]
         public string UserId { get; set; }
-
-        [Key, StringLength(50), Column(TypeName = "varchar(50)")]
+        [Key]
         public string RoleId { get; set; }
-
-        [Required]
-        public DateTime OwnedUtcDate { get; set; }
+        public System.DateTime OwnedUtcDate { get; set; }
 
         public virtual User User { get; set; }
-
         public virtual UserRole UserRole { get; set; }
     }
 }

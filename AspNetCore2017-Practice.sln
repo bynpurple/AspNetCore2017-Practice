@@ -9,9 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Services", "NetCore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Data", "NetCore.Data\NetCore.Data.csproj", "{3DC490A6-B931-4445-9EDE-04247B4BAEED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Migrations", "NetCore.Migrations\NetCore.Migrations.csproj", "{432EEEC9-43ED-447D-9050-3018578B836E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Migrations", "NetCore.Migrations\NetCore.Migrations.csproj", "{432EEEC9-43ED-447D-9050-3018578B836E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Databases", "NetCore.Databases\NetCore.Databases.csproj", "{FC4A5655-CD5D-4A1C-9CB2-02FD11F1C67D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Utilities", "NetCore.Utilities\NetCore.Utilities.csproj", "{6DBA3E30-1A26-4215-BEA3-B34289745AFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProctor", "DataProctor", "{98ECF8EA-EE86-4BBA-9DBF-FAF87FB6E028}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,10 @@ Global
 		{FC4A5655-CD5D-4A1C-9CB2-02FD11F1C67D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC4A5655-CD5D-4A1C-9CB2-02FD11F1C67D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC4A5655-CD5D-4A1C-9CB2-02FD11F1C67D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DBA3E30-1A26-4215-BEA3-B34289745AFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DBA3E30-1A26-4215-BEA3-B34289745AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DBA3E30-1A26-4215-BEA3-B34289745AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DBA3E30-1A26-4215-BEA3-B34289745AFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

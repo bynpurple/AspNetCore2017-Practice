@@ -12,6 +12,9 @@ namespace NetCore.Data.Classes
         public string UserName { get; set; }
         public string UserEmail { get; set; }
         public string Password { get; set; }
+
+        public int AccessFailedCount { get; set; }
+
         public bool IsMemberShipWithDrawn { get; set; }
         public System.DateTime JoinedUtcDate { get; set; }
 

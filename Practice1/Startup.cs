@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NetCore.Services.Data;
 using NetCore.Services.Interfaces;
 using NetCore.Services.Svcs;
+using NetCore.Utilities.Utils;
 
 namespace Practice1
 {
@@ -30,6 +31,8 @@ namespace Practice1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Common.SetDataProtection(services, @"C:\Users\user\Documents\AspNet\DataProtector\", "NetCore", Enums.CryptoType.CngCbc);
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -57,6 +60,8 @@ namespace Practice1
             services.AddDbContext<DBFirstDbContext>(options =>
             options.UseSqlServer(connectionString:Configuration.GetConnectionString(name: "DBFirstDBConnection"))
             );
+
+            // claim 인증
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -50,3 +50,20 @@ update-database -project NetCore.Migrations
 - Procedure 에서 Database의 Insert, Update, Delete 작업 후 Select 구문을 추가해도 그 값을 Return 할 수 없음
 - 데이터 검색은 별도의 C# 메소드로 분리할 것
 
+
+
+
+
+###	사용자 매핑
+
+```mssql
+USE [DBFirstDB]
+GO
+CREATE USER [coreuser] FOR LOGIN [coreuser]
+GO
+USE [DBFirstDB]
+GO
+ALTER ROLE [db_owner] ADD MEMBER [coreuser]
+GO
+```
+
